@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page Title</title>
+    <style>
+      body {
+        background-color: black;
+        text-align: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="https://images.unsplash.com/photo-1614555281536-6755500b7494?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1934&q=80" width="400" height="300">
+    <div class="login">
+      <h1>Predict CO2 Emission of Vehicles</h1>
+      <h3>
+        Enter the following values to predict the CO2 emission from the vehicle
+      </h3>
+      <form action="{{ url_for( 'predict' )}}" method="post">
+        <input type="text" name="enginesize" placeholder="Engine Size" required/>
+        <input type="text" name="cylinders" placeholder="Cylinder" required/>
+        <input type="text" name="fuel" placeholder="Fuel" required/>
+        <button type="submit" class="btn">Predict</button>
+      </form>
+
+      <br>
+      <br>
+      {{ prediction_text }}
+    </div>
+  </body>
+</html>
